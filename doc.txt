@@ -1,0 +1,172 @@
+Help on module Spin_Lattice:
+
+NAME
+    Spin_Lattice
+
+FILE
+    /home/s/Sophia.Kronthaler/Bananentasche/Spin_Lattice.py
+
+CLASSES
+    SpinLattice
+        SpinLattice_1d
+            SpinLattice_1d_h
+        SpinLattice_2d
+    
+    class SpinLattice
+     |  Methods defined here:
+     |  
+     |  __init__(self, n=20, j=1.0, h=0.0, ordered=True)
+     |      variable    |   description             
+     |      ============|===========================
+     |      n           |   number of spins         
+     |      j           |   coupling strength                 
+     |      ordered     |   initial configuration  
+     |      beta        |   1./Temperature
+     |      hDirection  |  for h>= 0 all spins are up if ordered=True
+     |      h           |   absolute value of the external magnetic field
+     |      config      |   container for the initial configuration (getConfig())
+     |      E           |   container for the total energy
+     |  
+     |  changeT(self, newT)
+     |      to adjust the member variable beta according to the newT: beta = 1./newT
+     |      in addition computes the new (temperature dependent) weights
+     |      returns None
+     |  
+     |  getIndex(self, i)
+     |      simplifies life by returning the correct index with regard to periodic
+     |      boundary conditions (python can deal with negative indices,
+     |      so we do not have to implement the -1 case)
+     |  
+     |  getRandomSpin(self)
+     |      returns coordinate of a randomly chosen spin: int(si)
+     |  
+     |  getWeight(self)
+     |      computes the Boltzmann weight factor needed in the Metropolis Algorithm
+     |      changes the member variable weight
+     |      returns None
+    
+    class SpinLattice_1d(SpinLattice)
+     |  for the one dimensional case(h=0)
+     |  
+     |  Methods defined here:
+     |  
+     |  __init__(self, n=20, j=1.0, h=0, ordered=True)
+     |      member variables |    description
+     |      =================|============================================================
+     |      hStrong          |  field is strong if h > j (to distinguish 
+     |                       |  between "strong" and "weak" fields when
+     |                       |  checking in the Metropolis Algorithm weather
+     |                       |  the new state is accepted directly or not
+     |      weight           |  container for Boltzmann weight factor, saved in the beginnig 
+     |                       |  (getWeight())
+     |      deltaE           |  container for energy difference
+     |  
+     |  flipSpin(self, si)
+     |      performs the spin flip of the spin si
+     |      returns None
+     |  
+     |  getConfig(self, ordered)
+     |      returns the initial configuration: array(bool)
+     |      if ordered=True: all spins up
+     |      if ordered=False: random spin config
+     |  
+     |  getDeltaE(self)
+     |  
+     |  getE(self)
+     |      returns the total energy of the initial configuration
+     |      parallel: -j
+     |      anti-parallel: +j
+     |  
+     |  getMag(self)
+     |      returns the magnetization of the current spin configuration:
+     |      int(Mag)
+     |  
+     |  getNewConfig(self, si)
+     |      this function computes the energy difference due to the prospective flip of
+     |      the spin si and flips the randomly chosen spin with if the metropolis algorithm
+     |      condition is full filled
+     |  
+     |  printSpinConfig(self)
+     |      prints the curren spin configuration
+     |      up-spins are represented by "*", down-spins by "|"
+     |  
+     |  
+    
+    class SpinLattice_1d_h(SpinLattice_1d)
+     |  for the one dimensional case with an external magnetic field
+     |  
+     |  Method resolution order:
+     |      SpinLattice_1d_h
+     |      SpinLattice_1d
+     |      SpinLattice
+     |  
+     |  Methods defined here:
+     |  
+     |  getDeltaE(self)
+     |      returns the energy difference of flipping one spin
+     |      deltaE[0]:   4*j + 2*h
+     |      deltaE[1]:   4*j - 2*h
+     |      deltaE[2]: - 4*j - 2*h
+     |      deltaE[3]: - 4*j + 2*h
+     |      deltaE[4]:         2*h
+     |      deltaE[5]:       - 2*h
+     |  
+     |  getE(self)
+     |      calculates the total energy for a given temperature of the
+     |      initial spin configuration
+     |      is called in changeT()
+     |      only compute the initial energy once in the beginning, during
+     |      the simulation we only add or distract small amounts of energy (deltaE)
+     |  
+     |  getNewConfig(self, si)
+     |      returns the new configuration due to the Metropolis algorithm
+     |  
+     | 
+     |  
+     |  
+    
+    class SpinLattice_2d(SpinLattice)
+     |  Methods defined here:
+     |  
+     |  __init__(self, n=20, j=1.0, h=0, ordered=True)
+     |  
+     |  flipSpin(self, i, j)
+     |      performs the spin flip of the spin si
+     |      returns None
+     |  
+     |  getConfig(self, ordered)
+     |      returns the initial configuration: array(bool)
+     |      if ordered=True: all spins up
+     |      if ordered=False: random spin config
+     |  
+     |  getDeltaE(self)
+     |      returns the energy difference of flipping one spin
+     |      DeltaE[0]=   8*j
+     |      DeltaE[1]=   4*j
+     |      DeltaE[2]=   0
+     |      DeltaE[3]= - 4*j
+     |      DeltaE[4]= - 8*j
+     |  
+     |  getE(self)
+     |      returns the total energy of the initial configuration
+     |      parallel: -j
+     |      anti-parallel: +j
+     |  
+     |  getMag(self)
+     |      returns the magnetization of the current spin configuration:
+     |      int(Mag)
+     |  
+     |  getNewConfig(self, sN)
+     |      returns the new configuration due to the Metropolis algorithm
+     |  
+     |  printSpinConfig(self)
+     |      prints the curren spin configuration
+     |      up-spins are represented by "*", down-spins by "o"
+     |  
+     |  ----------------------------------------------------------------------
+
+
+AUTHOR
+    Sophia_Kronthaler_and_Tobias_Goeppel
+
+

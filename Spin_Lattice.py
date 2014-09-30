@@ -19,16 +19,16 @@ class SpinLattice:
 		
 		
 		'''
-        variable    |   description             
-        ============|===========================
-        n           |   number of spins         
-        j           |   coupling strength                 
-        ordered     |   initial configuration  
-        beta        |   1./Temperature
-        hDirection  |  for h>= 0 all spins are up if ordered=True
-        h           |   magnetic field
-        config      |   container for the initial configuration (getConfig())
-        E           |   container for the total energy
+        member variable    |   description             
+        ===================|===========================
+        n                  |   number of spins         
+        j                  |   coupling strength                 
+        ordered            |   initial configuration  
+        beta               |   1./Temperature
+        hDirection         |  for h>= 0 all spins are up if ordered=True
+        h                  |   absolute value of the external magnetic field
+        config             |   container for the initial configuration (getConfig())
+        E                  |   container for the total energy
 		'''
 		
 		ra.seed(ti.time()) 
@@ -38,7 +38,7 @@ class SpinLattice:
 		self.ordered = ordered
 		self.beta = None
 		self.hDirection = bool(h >= 0)
-		self.h = h
+		self.h = abs(h)
 		self.config = self.getConfig(ordered)
 		self.E = self.getE()
 		
@@ -92,22 +92,22 @@ class SpinLattice:
 
 class SpinLattice_1d(SpinLattice):
 	'''
-	for the one dimensional case
+	for the one dimensional case(h=0)
 	'''
 	
 	
 	def __init__(self, n=20, j=1., h=0, ordered=True):
 		
 		'''
-		member variables |    description
+		member variable |    description
 		=================|============================================================
 		hStrong          |  field is strong if h > j (to distinguish 
-                         |  between "strong" and "weak" fields when
-                         |  checking in the Metropolis Algorithm weather
-                         |  the new state is accepted directly or not
+		                 |  between "strong" and "weak" fields when
+		                 |  checking in the Metropolis Algorithm weather
+		                 |  the new state is accepted directly or not
 		weight           |  container for Boltzmann weight factor, saved in the beginnig 
 		                 |  (getWeight())
-		deltaE           |  container for energy difference (for h==0: deltaE = 2j)
+		deltaE           |  container for energy difference
 		
 		'''
 		
@@ -116,10 +116,12 @@ class SpinLattice_1d(SpinLattice):
 		self.N = n
 		self.hStrong = bool(self.h > 2*self.j)
 		self.weight = None
-		self.deltaE = 4*self.j
+		self.deltaE = self.getDeltaE()
+				
 		
+	def getDeltaE(self):
 		
-		
+		return 4*self.j
 		
 	def getConfig(self, ordered):
 		'''
@@ -234,23 +236,7 @@ class SpinLattice_1d_h(SpinLattice_1d):
 	'''
 	for the one dimensional case with an external magnetic field
 	'''
-	
-	def __init(self, n=20, j=1., h=0., ordered=True):
 		
-		'''
-		member variables    |     description
-		====================|================================================
-		h                   |   absolute value of the external magnetic field
-        deltaE              |   container for energy difference
-		'''
-		
-		SpinLattice_1d.__init__(self, n=20, j=1., h=0, ordered=True)
-		
-		self.h = abs(h)
-		self.deltaE = self.getDeltaE()
-
-	
-	
 	def getE(self):
 		
 		'''
@@ -284,7 +270,6 @@ class SpinLattice_1d_h(SpinLattice_1d):
 		
 		
 	def getDeltaE(self): 
-		
 		'''
 		returns the energy difference of flipping one spin
 		deltaE[0]:   4*j + 2*h
@@ -295,16 +280,9 @@ class SpinLattice_1d_h(SpinLattice_1d):
 		deltaE[5]:       - 2*h
 		'''
 		
-		deltaE_h = []
-		
-		deltaE_h.append(4*self.j + 2*self.h)
-		deltaE_h.append(4*self.j - 2*self.h)
-		deltaE_h.append(-4*self.j - 2*self.h)
-		deltaE_h.append(-4*self.j + 2*self.h)
-		deltaE_h.append(2*self.h)
-		deltaE_h.append(- 2*self.h)
-		
-		return deltaE_h
+		deltaE = np.array([4*self.j + 2*self.h, 4*self.j - 2*self.h, -4*self.j - 2*self.h, -4*self.j + 2*self.h, 2*self.h, - 2*self.h ]) 
+			
+		return deltaE
 		
 	def getNewConfig(self, si):
 		'''
@@ -386,13 +364,13 @@ class SpinLattice_2d(SpinLattice):
 		SpinLattice.__init__(self, n=20, j=1., h=0, ordered=True)
 
 		'''
-		attributes   |   description
-		=============|==========================================
-		N            |   total amount of spins: n*n
-		weigth       |   container for Boltzmann weight factor
-		             |   saved in the beginnig, array of length(5)
-		deltaE       |   container for energy difference,
-		             |   array of length(5), calculated in getDeltaE()
+		member variable   |   description
+		==================|==========================================
+		N                 |   total amount of spins: n*n
+		weigth            |   container for Boltzmann weight factor
+		                  |   saved in the beginnig, array of length(5)
+		deltaE            |   container for energy difference,
+		                  |   array of length(5), calculated in getDeltaE()
 		'''
 
 
@@ -515,32 +493,20 @@ class SpinLattice_2d(SpinLattice):
 
 
 
-	def getNewConfig(self, sN):  # choosing the random spin: 10% (function call getRandomSpin() )
-
-		'''
-		# IMPLEMENTATION OF THE METROPOLIS ALGORITHM: if there are more than one anti-parallel neighbours the energy
-        # remains constant or is lowered by a spin flip and we can accept the flip directly
-        # otherwise we have to roll the dice to decide whether we flip the spin or not
-        '''
-
-		#timer[0].start('getNewConfig_2d')
+	def getNewConfig(self, sN):
 		
-		#timer[1].start('divmod') # (7%)
-		i, j = divmod(sN, self.n)  # to speed up the simulation we generate only one random number in the range [0, n*n]
-                                   # and recover the spin coordinates by a simple modulo operation
-        #timer[1].stop()
-
-        #timer[2].start('case') # (4%)
-		case = 4  # there are four possible nearest neighbour (NN) configurations, case is the number of anti-parallel
-                  # neighbouring spins
-        #timer[2].stop()
-
-        #timer[3].start('which case?') # (80%)
+		'''
+		returns the new configuration due to the Metropolis algorithm
+		'''
+			
+		i, j = divmod(sN, self.n)  
+		
+		case = 4 
 		if self.config[i, j] == self.config[i, j-1]: case -= 1
 		if self.config[i, j] == self.config[i-1, j]: case -= 1
-		if self.config[i, j] == self.config[i, self.getIndex(j+1)]: case -= 1  # getIndex is not very costly
+		if self.config[i, j] == self.config[i, self.getIndex(j+1)]: case -= 1
 		if self.config[i, j] == self.config[self.getIndex(i+1), j]: case -= 1
-		#timer[3].stop()
+		
 		
 		if case >= 2:
 			
@@ -580,32 +546,31 @@ class SpinLattice_2d(SpinLattice):
 
 
 if __name__ == "__main__":
-
-
-    spinLattice = SpinLattice_1d_h(h=-1.)
-
-
-    number_iterations = 100000
-    temperature = 4.
-
-    print "Initial configuration (ordered = True, disordered = False): ", spinLattice.ordered
-    print "Spinlattice size: ", spinLattice.n
-    print "Temperature: ", temperature
-    print "initial energy", spinLattice.E
-    spinLattice.printSpinConfig()
-
-
-    spinLattice.changeT(temperature)
-
-    print "magnetisation: ", spinLattice.getMag()
-
-    for i in range(number_iterations):
-
-        spinLattice.getNewConfig(spinLattice.getRandomSpin())
-
-
-    print "Number of itearions: ", number_iterations
-    print "final energy", spinLattice.E
-    spinLattice.printSpinConfig()
-
-    print "magnetisation: ", spinLattice.getMag()
+	
+	spinLattice = SpinLattice_1d_h()
+	
+	print spinLattice.N
+	
+	number_iterations = 100000
+	temperature = 4.
+	
+	print "Initial configuration (ordered = True, disordered = False): ", spinLattice.ordered
+	print "Spinlattice size: ", spinLattice.n
+	print "Temperature: ", temperature
+	print "initial energy", spinLattice.E
+	spinLattice.printSpinConfig()
+	spinLattice.changeT(temperature)
+	print "magnetisation: ", spinLattice.getMag()
+	
+	print spinLattice.weight
+	print spinLattice.deltaE
+	
+	for i in range(number_iterations):
+		
+		spinLattice.getNewConfig(spinLattice.getRandomSpin())
+		
+	print "Number of itearions: ", number_iterations
+	print "final energy", spinLattice.E
+	spinLattice.printSpinConfig()
+	
+	print "magnetisation: ", spinLattice.getMag()
