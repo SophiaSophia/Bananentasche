@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import Spin_Lattice as spl
+import os as os
+import time as ti
 
 
 
@@ -12,12 +14,20 @@ class Ising:
 		self.perSpin = 1./n**dimension
 		
 		self.T_Liste = None
+		self.dimension = dimension
+		self.n = n
+		self.j = j
+		self.h = h
+		self.ordered = ordered
+		self.sweep = None
+		self.num_sweeps = None
 		
 		self.Mag_MeanList = np.zeros(0)
 		self.Mag_VarList = np.zeros(0)
 		self.E_MeanList = np.zeros(0)
 		self.susz = np.zeros(0)
 		self.capacity = np.zeros(0)
+		self.filename = None
 		
 		if dimension == 1 and h== 0.:
 			
@@ -42,6 +52,10 @@ class Ising:
 
 	def simulate(self,sweep = 1000, num_sweeps = 50):
 	
+		self.sweep = sweep
+		self.num_sweeps = num_sweeps
+		
+	
 		for t in range(self.T_List.size):
 
 			self.spinlattice.changeT(self.T_List[t])
@@ -64,10 +78,6 @@ class Ising:
 			self.Mag_VarList = np.append(self.Mag_VarList, np.var(MagList))
 			self.E_MeanList = np.append(self.E_MeanList, np.mean(EList))
 		
-		print self.Mag_MeanList
-		print self.Mag_VarList
-		print self.E_MeanList
-		
 		return None
 	
 	
@@ -88,13 +98,67 @@ class Ising:
 		return None
 
 		
-	#def saveObservables(self):
+	def saveObservables(self):
+	
+		self.filename = "./Results_"+ti.strftime("%d.%m.%Y_%H.%M")
+	
+		os.mkdir(self.filename)
 		
-	#	file = open ("E_MeanList", "w")
-	#	for item in thelist:
-	#		print>>file, item
+		
+		file = open (self.filename + "/E_MeanList", "w")
+		np.savetxt(file, self.E_MeanList, fmt='%.10f')
+		file.close()
+	
+		file = open (self.filename + "/Mag_MeanList", "w")
+		np.savetxt(file, self.Mag_MeanList, fmt='%.10f')
+		file.close()
 
+		file = open (self.filename + "/Suszeptibility", "w")
+		np.savetxt(file, self.susz, fmt='%.10f')
+		file.close()
+		
+		file = open (self.filename + "/Heat_Capacity", "w")
+		np.savetxt(file, self.capacity, fmt='%.10f')
+		file.close()
+		
+		file = open (self.filename + "/Temperature", "w")
+		np.savetxt(file, self.T_List, fmt='%.10f')
+		file.close()
+		
+		file = open (self.filename + "/SpinLattice_Settings", "a")
+		file.write("Dimension: " + str(self.dimension) + "\n")
+		file.write("Lattice size: " + str(self.n) + "\n")
+		file.write("Coupling constant: " + str(self.j) + "\n")
+		file.write("External magnetic field: " + str(self.h) + "\n")
+		file.write("Starting with an ordered configuration: " + str(self.ordered) + "\n")
+		file.write("Sweep size: " + str(self.sweep) + "\n")
+		file.write("Number of sweeps: " + str(self.num_sweeps) + "\n")
+		
+	def savePlots(self):
+	
+	
+		plt.plot(self.T_List, self.Mag_MeanList, 'ro')
+		plt.xlabel('$Temperature t$')
+		plt.ylabel('$Magnetisation per spin m$')
+		plt.savefig(self.filename + "/Mag_Mean")
+		
 
+		plt.plot(self.T_List, self.E_MeanList, 'ro')
+		plt.xlabel('$Temperature t$')
+		plt.ylabel('$Energy per spin e$')
+		plt.savefig(self.filename + "/E_Mean")
+
+		plt.plot(self.T_List, self.susz,'ro')
+		plt.xlabel('$Temperature t$')
+		plt.ylabel('$Suszeptibility per spin \chi $')
+		plt.savefig(self.filename + "/Suszeptibility")
+
+		plt.plot(self.T_List, self.capacity, 'ro')
+		plt.xlabel('$Temperature t$')
+		plt.ylabel('$Heat capacity per spin c$')
+		plt.savefig(self.filename + "/Heat_Capacitiy")
+		
+		
 if __name__ == "__main__":
 	
 	ising = Ising()
@@ -102,6 +166,9 @@ if __name__ == "__main__":
 	ising.simulate(100,10)
 	
 	ising.getObservables()
+	
+	ising.saveObservables()
+	ising.savePlots()
 
 
 
