@@ -89,6 +89,34 @@ class SpinLattice:
 		return np.random.randint(self.N-1)
 		
 		
+	def test(self, number_iterations = 1000, temperature = 1., ):
+		'''
+		test routine
+		number of iterations: number of spin flips
+		prints out several control parameters
+		'''
+		
+		print "Initial configuration (ordered = True, disordered = False): ", self.ordered
+		print "Spinlattice size: ", self.n
+		print "initial energy", self.E
+		print "initial magnetisation: ", spinLattice.getMag()
+		self.printSpinConfig()
+		print "Temperature: ", temperature
+		self.changeT(temperature)
+		
+		print "weights: ", self.weight
+		print "energy difference", self.deltaE
+		
+		for i in range(number_iterations):
+		
+			self.getNewConfig(self.getRandomSpin())
+		
+		print "Number of itearions: ", number_iterations
+		print "final energy", self.E
+		print "final magnetisation: ", self.getMag()
+		self.printSpinConfig()
+		
+		
 
 class SpinLattice_1d(SpinLattice):
 	'''
@@ -543,34 +571,14 @@ class SpinLattice_2d(SpinLattice):
 
 		return None
 
+		
+		
 
 
 if __name__ == "__main__":
 	
-	spinLattice = SpinLattice_1d_h()
 	
-	print spinLattice.N
+	spinLattice = SpinLattice_2d()
 	
-	number_iterations = 100000
-	temperature = 4.
+	spinLattice.test(temperature=3.)
 	
-	print "Initial configuration (ordered = True, disordered = False): ", spinLattice.ordered
-	print "Spinlattice size: ", spinLattice.n
-	print "Temperature: ", temperature
-	print "initial energy", spinLattice.E
-	spinLattice.printSpinConfig()
-	spinLattice.changeT(temperature)
-	print "magnetisation: ", spinLattice.getMag()
-	
-	print spinLattice.weight
-	print spinLattice.deltaE
-	
-	for i in range(number_iterations):
-		
-		spinLattice.getNewConfig(spinLattice.getRandomSpin())
-		
-	print "Number of itearions: ", number_iterations
-	print "final energy", spinLattice.E
-	spinLattice.printSpinConfig()
-	
-	print "magnetisation: ", spinLattice.getMag()

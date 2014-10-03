@@ -16,16 +16,16 @@ CLASSES
      |  Methods defined here:
      |  
      |  __init__(self, n=20, j=1.0, h=0.0, ordered=True)
-     |      variable    |   description             
-     |      ============|===========================
-     |      n           |   number of spins         
-     |      j           |   coupling strength                 
-     |      ordered     |   initial configuration  
-     |      beta        |   1./Temperature
-     |      hDirection  |  for h>= 0 all spins are up if ordered=True
-     |      h           |   absolute value of the external magnetic field
-     |      config      |   container for the initial configuration (getConfig())
-     |      E           |   container for the total energy
+     |      member variable    |   description             
+     |      ===================|===========================
+     |      n                  |   number of spins         
+     |      j                  |   coupling strength                 
+     |      ordered            |   initial configuration  
+     |      beta               |   1./Temperature
+     |      hDirection         |  for h>= 0 all spins are up if ordered=True
+     |      h                  |   absolute value of the external magnetic field
+     |      config             |   container for the initial configuration (getConfig())
+     |      E                  |   container for the total energy
      |  
      |  changeT(self, newT)
      |      to adjust the member variable beta according to the newT: beta = 1./newT
@@ -44,6 +44,11 @@ CLASSES
      |      computes the Boltzmann weight factor needed in the Metropolis Algorithm
      |      changes the member variable weight
      |      returns None
+     |  
+     |  test(self, number_iterations=1000, temperature=1.0)
+     |      test routine
+     |      number of iterations: number of spin flips
+     |      prints out several control parameters
     
     class SpinLattice_1d(SpinLattice)
      |  for the one dimensional case(h=0)
@@ -51,7 +56,7 @@ CLASSES
      |  Methods defined here:
      |  
      |  __init__(self, n=20, j=1.0, h=0, ordered=True)
-     |      member variables |    description
+     |      member variable |    description
      |      =================|============================================================
      |      hStrong          |  field is strong if h > j (to distinguish 
      |                       |  between "strong" and "weak" fields when
@@ -90,7 +95,31 @@ CLASSES
      |      prints the curren spin configuration
      |      up-spins are represented by "*", down-spins by "|"
      |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from SpinLattice:
      |  
+     |  changeT(self, newT)
+     |      to adjust the member variable beta according to the newT: beta = 1./newT
+     |      in addition computes the new (temperature dependent) weights
+     |      returns None
+     |  
+     |  getIndex(self, i)
+     |      simplifies life by returning the correct index with regard to periodic
+     |      boundary conditions (python can deal with negative indices,
+     |      so we do not have to implement the -1 case)
+     |  
+     |  getRandomSpin(self)
+     |      returns coordinate of a randomly chosen spin: int(si)
+     |  
+     |  getWeight(self)
+     |      computes the Boltzmann weight factor needed in the Metropolis Algorithm
+     |      changes the member variable weight
+     |      returns None
+     |  
+     |  test(self, number_iterations=1000, temperature=1.0)
+     |      test routine
+     |      number of iterations: number of spin flips
+     |      prints out several control parameters
     
     class SpinLattice_1d_h(SpinLattice_1d)
      |  for the one dimensional case with an external magnetic field
@@ -121,9 +150,62 @@ CLASSES
      |  getNewConfig(self, si)
      |      returns the new configuration due to the Metropolis algorithm
      |  
-     | 
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from SpinLattice_1d:
      |  
+     |  __init__(self, n=20, j=1.0, h=0, ordered=True)
+     |      member variable |    description
+     |      =================|============================================================
+     |      hStrong          |  field is strong if h > j (to distinguish 
+     |                       |  between "strong" and "weak" fields when
+     |                       |  checking in the Metropolis Algorithm weather
+     |                       |  the new state is accepted directly or not
+     |      weight           |  container for Boltzmann weight factor, saved in the beginnig 
+     |                       |  (getWeight())
+     |      deltaE           |  container for energy difference
      |  
+     |  flipSpin(self, si)
+     |      performs the spin flip of the spin si
+     |      returns None
+     |  
+     |  getConfig(self, ordered)
+     |      returns the initial configuration: array(bool)
+     |      if ordered=True: all spins up
+     |      if ordered=False: random spin config
+     |  
+     |  getMag(self)
+     |      returns the magnetization of the current spin configuration:
+     |      int(Mag)
+     |  
+     |  printSpinConfig(self)
+     |      prints the curren spin configuration
+     |      up-spins are represented by "*", down-spins by "|"
+     |  
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from SpinLattice:
+     |  
+     |  changeT(self, newT)
+     |      to adjust the member variable beta according to the newT: beta = 1./newT
+     |      in addition computes the new (temperature dependent) weights
+     |      returns None
+     |  
+     |  getIndex(self, i)
+     |      simplifies life by returning the correct index with regard to periodic
+     |      boundary conditions (python can deal with negative indices,
+     |      so we do not have to implement the -1 case)
+     |  
+     |  getRandomSpin(self)
+     |      returns coordinate of a randomly chosen spin: int(si)
+     |  
+     |  getWeight(self)
+     |      computes the Boltzmann weight factor needed in the Metropolis Algorithm
+     |      changes the member variable weight
+     |      returns None
+     |  
+     |  test(self, number_iterations=1000, temperature=1.0)
+     |      test routine
+     |      number of iterations: number of spin flips
+     |      prints out several control parameters
     
     class SpinLattice_2d(SpinLattice)
      |  Methods defined here:
@@ -164,7 +246,33 @@ CLASSES
      |      up-spins are represented by "*", down-spins by "o"
      |  
      |  ----------------------------------------------------------------------
+     |  Methods inherited from SpinLattice:
+     |  
+     |  changeT(self, newT)
+     |      to adjust the member variable beta according to the newT: beta = 1./newT
+     |      in addition computes the new (temperature dependent) weights
+     |      returns None
+     |  
+     |  getIndex(self, i)
+     |      simplifies life by returning the correct index with regard to periodic
+     |      boundary conditions (python can deal with negative indices,
+     |      so we do not have to implement the -1 case)
+     |  
+     |  getRandomSpin(self)
+     |      returns coordinate of a randomly chosen spin: int(si)
+     |  
+     |  getWeight(self)
+     |      computes the Boltzmann weight factor needed in the Metropolis Algorithm
+     |      changes the member variable weight
+     |      returns None
+     |  
+     |  test(self, number_iterations=1000, temperature=1.0)
+     |      test routine
+     |      number of iterations: number of spin flips
+     |      prints out several control parameters
 
+DATA
+    __author__ = 'Sophia_Kronthaler_and_Tobias_Goeppel'
 
 AUTHOR
     Sophia_Kronthaler_and_Tobias_Goeppel
