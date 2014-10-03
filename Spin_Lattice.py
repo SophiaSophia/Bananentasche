@@ -33,7 +33,7 @@ class SpinLattice:
 		
 		ra.seed(ti.time()) 
 		
-		self.n = n  
+		self.n = n
 		self.j = j  
 		self.ordered = ordered
 		self.beta = None
@@ -139,7 +139,7 @@ class SpinLattice_1d(SpinLattice):
 		
 		'''
 		
-		SpinLattice.__init__(self, n=20, j=1., h=0., ordered=True)
+		SpinLattice.__init__(self, n, j, h, ordered)
 		
 		self.N = n
 		self.hStrong = bool(self.h > 2*self.j)
@@ -389,7 +389,9 @@ class SpinLattice_2d(SpinLattice):
 	
 	def __init__(self, n=20, j=1., h=0, ordered=True):
 		
-		SpinLattice.__init__(self, n=20, j=1., h=0, ordered=True)
+
+	
+		SpinLattice.__init__(self, n, j, h, ordered)
 
 		'''
 		member variable   |   description
@@ -576,7 +578,7 @@ class SpinLattice_2d(SpinLattice):
 
 
 if __name__ == "__main__":
-	
+
 	
 	spinLattice = SpinLattice_2d()
 	

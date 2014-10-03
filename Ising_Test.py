@@ -8,7 +8,7 @@ import time as ti
 
 class Ising:
 	
-	def __init__(self, dimension = 1, n = 20, j=1., h=0., ordered = True):
+	def __init__(self, dimension = 1, n = 200, j=1., h=0., ordered = True):
 		
 	
 		self.perSpin = 1./n**dimension
@@ -136,40 +136,42 @@ class Ising:
 		
 	def savePlots(self):
 	
-	
+
 		plt.plot(self.T_List, self.Mag_MeanList, 'ro')
-		plt.xlabel('$Temperature t$')
-		plt.ylabel('$Magnetisation per spin m$')
+		plt.xlabel('$Temperature$ $t$')
+		plt.ylabel('$Magnetisation$ $per$ $spin$ $m$')
 		plt.savefig(self.filename + "/Mag_Mean")
+		plt.close()
 		
-
 		plt.plot(self.T_List, self.E_MeanList, 'ro')
-		plt.xlabel('$Temperature t$')
-		plt.ylabel('$Energy per spin e$')
+		plt.xlabel('$Temperature$ $t$')
+		plt.ylabel('$Energy$ $per$ $spin$ $e$')
 		plt.savefig(self.filename + "/E_Mean")
-
+		plt.close()
+		
 		plt.plot(self.T_List, self.susz,'ro')
-		plt.xlabel('$Temperature t$')
-		plt.ylabel('$Suszeptibility per spin \chi $')
+		plt.xlabel('$Temperature$ $t$')
+		plt.ylabel('$Suszeptibility$ $per$ $spin$ $\chi $')
 		plt.savefig(self.filename + "/Suszeptibility")
+		plt.close()
 
-		plt.plot(self.T_List, self.capacity, 'ro')
-		plt.xlabel('$Temperature t$')
-		plt.ylabel('$Heat capacity per spin c$')
+		plt.plot(self.T_List[:-1], self.capacity, 'ro')
+		plt.xlabel('$Temperature$ $t$')
+		plt.ylabel('$Heat$ $capacity$ $per$ $spin$ $c$')
 		plt.savefig(self.filename + "/Heat_Capacitiy")
+		plt.close()
 		
 		
 if __name__ == "__main__":
 	
-	ising = Ising()
+	ising = Ising(dimension=1, n=200)
 	ising.setTemperatureRange(1,2,0.5)
-	ising.simulate(100,10)
+	ising.simulate(1000, 100)
 	
 	ising.getObservables()
 	
 	ising.saveObservables()
 	ising.savePlots()
-
 
 
 '''
