@@ -9,15 +9,15 @@ class Ising:
 	def __init__(self, dimension = 1, n = 20, j=1., h=0., ordered = True):
 		
 	
-		perSpin = 1./n**dimension
+		self.perSpin = 1./n**dimension
 		
 		self.T_Liste = None
 		
-		self.Mag_MeanList = np.zeros(1)
-		#self.Mag_VarList = np.zeros(self.T_List.size)
-		#self.E_MeanList = np.zeros(self.T_List.size)
-		self.susz = None
-		#self.capacity = np.zeros(self.T_List.size)
+		self.Mag_MeanList = np.zeros(0)
+		self.Mag_VarList = np.zeros(0)
+		self.E_MeanList = np.zeros(0)
+		self.susz = np.zeros(0)
+		self.capacity = np.zeros(0)
 		
 		if dimension == 1 and h== 0.:
 			
@@ -60,10 +60,13 @@ class Ising:
 				MagList[i] = self.spinlattice.getMag()
 				EList[i] = self.spinlattice.E
 
-			np.append([self.Mag_MeanList], [np.mean(MagList)])
-			print self.Mag_MeanList
-			#self.Mag_VarList[t] = np.var(MagList)
-			#self.E_MeanList[t] = np.mean(EList)
+			self.Mag_MeanList = np.	append(self.Mag_MeanList, np.mean(MagList))
+			self.Mag_VarList = np.append(self.Mag_VarList, np.var(MagList))
+			self.E_MeanList = np.append(self.E_MeanList, np.mean(EList))
+		
+		print self.Mag_MeanList
+		print self.Mag_VarList
+		print self.E_MeanList
 		
 		return None
 	
@@ -72,14 +75,16 @@ class Ising:
 	def getObservables(self):
 		
 		
-		self.E_MeanList *= perSpin
+		self.E_MeanList *= self.perSpin
 		
-		self.Mag_MeanList *= perSpin
+		self.Mag_MeanList *= self.perSpin
 
-		self.susz = self.Mag_VarList / self.T_List * perSpin
-
-		self.capacity = abs(E_MeanList - E_MeanList)/ abs(T_List - T_List)
+		self.susz = self.Mag_VarList / self.T_List * self.perSpin
 		
+		for i in range(self.T_List.size):
+			
+			self.capacity = np. append(abs(self.E_MeanList[i] - self.E_MeanList[i+1])/ abs(self.T_List[i] - self.T_List[i+1])
+			
 		return None
 
 		
@@ -96,7 +101,7 @@ if __name__ == "__main__":
 	ising.setTemperatureRange(1,2,0.5)
 	ising.simulate(100,10)
 	
-	print ising.getObservables()
+	ising.getObservables()
 
 
 
