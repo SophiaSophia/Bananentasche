@@ -81,9 +81,9 @@ class Ising:
 
 		self.susz = self.Mag_VarList / self.T_List * self.perSpin
 		
-		for i in range(self.T_List.size):
+		for i in range(self.T_List.size-1):
 			
-			self.capacity = np. append(abs(self.E_MeanList[i] - self.E_MeanList[i+1])/ abs(self.T_List[i] - self.T_List[i+1])
+			self.capacity = np. append(self.capacity, abs(self.E_MeanList[i] - self.E_MeanList[i+1])/ abs(self.T_List[i] - self.T_List[i+1]))
 			
 		return None
 
