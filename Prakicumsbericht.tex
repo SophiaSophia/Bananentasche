@@ -49,10 +49,10 @@ This leads to the important conclusion that the variance of $I_N$ does not depen
 To show this characteristic we define the ratio $\rho$.
 
 \[\rho = \frac{N}{V^2}\frac{\sigma^2(I_N)}{\sigma^2(f)}\]
-\newpage
 
 
-\begin{figure}[h]
+
+\begin{figure}
 \centering
 \caption{$f(x)=x$, volume: $[-1,1]$, ratio: 1.051}
 	\begin{minipage}[b]{\linewidth}
@@ -65,7 +65,7 @@ To show this characteristic we define the ratio $\rho$.
 	\end{minipage}
 \label{fig:linear}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\caption{$f(x)=x^2$, volume: $[-1,1]$, ratio: 1.043}
 	\begin{minipage}[b]{\linewidth}
@@ -78,7 +78,7 @@ To show this characteristic we define the ratio $\rho$.
 	\end{minipage}
 	\label{fig:linear}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\caption{$f(x)=x^5$, volume: $[-1,1]$, ratio: 0.951, (the fit function failed to find the correct fit paramters for the Gaussian)}
 	\begin{minipage}[b]{\linewidth}
@@ -91,7 +91,7 @@ To show this characteristic we define the ratio $\rho$.
 	\end{minipage}
 	\label{fig:linear}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\caption{$f(x)=exp(x)$, volume: $[-1,1]$, ratio: 0.932}
 	\begin{minipage}[b]{\linewidth}
@@ -104,7 +104,7 @@ To show this characteristic we define the ratio $\rho$.
 	\end{minipage}
 	\label{fig:linear}
 \end{figure}
-\begin{figure}[h]
+\begin{figure}
 	\centering
 	\caption{$f(x)=sin(x)$, volume: $[0,2\pi]$, ratio: 1.085}
 	\begin{minipage}[b]{\linewidth}
@@ -119,21 +119,32 @@ To show this characteristic we define the ratio $\rho$.
 \end{figure}
 
 
+
+\newpage
 \section{Ising Model}
 
 
-1d-Hamiltonian: \[H(\vec{S})= - \frac{1}{2}\sum_{i=0}^{N-1} \sum_{j=0}^{N-1} J_{ij} s_i s_j - B \sum_{i=0}^{N-1}s_i\]
+1d-Hamiltonian: \[H(\vec{S})= - \frac{1}{2}\sum_{i=0}^{N-1} \sum_{j=0}^{N-1} J_{ij} s_i s_j - B \sum_{i=0}^{N-1}s_i \]
 nearest neighbour interaction
 j: coupling constant
 Ground state for j=1 and h=0: $E_0=-NJ$\newline
 
-Probability: \[P(\vec{S})= \sim \exp[-\beta H(\vec{S})]\] with $\beta = \frac{1}{k_B T}$
+Probability: \[P(\vec{S}) \sim \exp[-\beta H(\vec{S})]\text{, with } \beta = \frac{1}{k_B T}\]
 
-Observables (per spin) 1d withou magnetic field: 
-\[\braket{u} = \sum_{\vec{S}}H(\vec{S})P(\vec{S}) = -J \tanh(\beta J)\]
-\[\braket{m} = 0 \]
-\[\braket{c} = k_B(\beta J)^2[1-\tanh^2(K)] \]
 
+
+
+Observables (per spin) 1d withou magnetic field:
+
+$$\braket{m} = 0$$\newline
+$$\braket{c} = k_B(\beta J)^2[1-\tanh^2(K)]$$\newline
+$$\braket{u} = \sum_{\vec{S}}H(\vec{S})P(\vec{S}) = -J \tanh(\beta J)$$\newline
+
+
+
+\begin{figure}[h]
+	\includegraphics[width=\linewidth]{Plots/spin1d}
+\end{figure}
 
 
 Observables (per spin) 1d with magnetic field:
@@ -141,11 +152,16 @@ Observables (per spin) 1d with magnetic field:
 \[\braket{\chi}=\beta \cosh(h) \frac{\exp(-4J\beta)}{(\sinh(h)+\exp(-4J\beta))^{\frac{3}{2}}}\]
 
 
+\begin{figure}[h]
+	\includegraphics[width=10cm]{Plots/spin1dh}
+\end{figure}
 
 
 
 
+\newpage
 \section{Metropolis Algorithm}
+\newpage
 \section{Implementation and Performance}
 
 
