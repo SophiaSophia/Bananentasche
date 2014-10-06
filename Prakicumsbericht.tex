@@ -119,6 +119,35 @@ To show this characteristic we define the ratio $\rho$.
 \end{figure}
 
 
+\section{Ising Model}
+
+
+1d-Hamiltonian: \[H(\vec{S})= - \frac{1}{2}\sum_{i=0}^{N-1} \sum_{j=0}^{N-1} J_{ij} s_i s_j - B \sum_{i=0}^{N-1}s_i\]
+nearest neighbour interaction
+j: coupling constant
+Ground state for j=1 and h=0: $E_0=-NJ$\newline
+
+Probability: \[P(\vec{S})= \sim \exp[-\beta H(\vec{S})]\] with $\beta = \frac{1}{k_B T}$
+
+Observables (per spin) 1d withou magnetic field: 
+\[\braket{u} = \sum_{\vec{S}}H(\vec{S})P(\vec{S}) = -J \tanh(\beta J)\]
+\[\braket{m} = 0 \]
+\[\braket{c} = k_B(\beta J)^2[1-\tanh^2(K)] \]
+
+
+
+Observables (per spin) 1d with magnetic field:
+\[\braket{m} = \frac{\sinh(h)}{\sqrt{\sinh^2(h) + \exp(-4\beta J) }}\]
+\[\braket{\chi}=\beta \cosh(h) \frac{\exp(-4J\beta)}{(\sinh(h)+\exp(-4J\beta))^{\frac{3}{2}}}\]
+
+
+
+
+
+
+\section{Metropolis Algorithm}
+\section{Implementation and Performance}
+
 
 
 \end{document}
