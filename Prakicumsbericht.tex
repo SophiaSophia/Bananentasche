@@ -53,8 +53,11 @@ To show this characteristic we define the ratio $\rho$.
 
 \[\rho = \frac{N}{V^2}\frac{\sigma^2(I_N)}{\sigma^2(f)}\]
 
+Figure \ref{fig:monte} shows the result by integrating $f(x)=x$ via the Monte Carlo method. Furthermore results for different functions can be found in the appendix \ref{ap:montecarlo}.
+
 
 \begin{figure}
+	\label{fig:monte}
 \centering
 \caption{$f(x)=x$, volume: $[-1,1]$, ratio: 1.051}
 	\begin{minipage}[b]{\linewidth}
@@ -67,58 +70,8 @@ To show this characteristic we define the ratio $\rho$.
 	\end{minipage}
 \label{fig:linear}
 \end{figure}
-\begin{figure}
-	\centering
-	\caption{$f(x)=x^2$, volume: $[-1,1]$, ratio: 1.043}
-	\begin{minipage}[b]{\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Plots/quadratisch}
-	\end{minipage}
-	\begin{minipage}[b]{\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Plots/histQuadratisch}
-	\end{minipage}
-	\label{fig:linear}
-\end{figure}
-\begin{figure}
-	\centering
-	\caption{$f(x)=x^5$, volume: $[-1,1]$, ratio: 0.951, (the fit function failed to find the correct fit paramters for the Gaussian)}
-	\begin{minipage}[b]{\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Plots/x5}
-	\end{minipage}
-	\begin{minipage}[b]{\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Plots/x5_HIST}
-	\end{minipage}
-	\label{fig:linear}
-\end{figure}
-\begin{figure}
-	\centering
-	\caption{$f(x)=exp(x)$, volume: $[-1,1]$, ratio: 0.932}
-	\begin{minipage}[b]{\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Plots/eFunktion}
-	\end{minipage}
-	\begin{minipage}[b]{\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Plots/eFunktionHist}
-	\end{minipage}
-	\label{fig:linear}
-\end{figure}
-\begin{figure}
-	\centering
-	\caption{$f(x)=sin(x)$, volume: $[0,2\pi]$, ratio: 1.085}
-	\begin{minipage}[b]{\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Plots/sin}
-	\end{minipage}
-	\begin{minipage}[b]{\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{Plots/sin_hist}
-	\end{minipage}
-	\label{fig:linear}
-\end{figure}
+
+
 
 \newpage
 \section{Ising Model}
@@ -127,15 +80,15 @@ The Ising model is a well known toy model for ferromagnetism, for that reason it
 The Hamiltonian for a predefined spin configration $\{c\}$ is given by:
  \[H(\{c\})= - \frac{1}{2}\sum_{i=0}^{N-1} \sum_{j=0}^{N-1} J_{ij} s_i s_j - B \sum_{i=0}^{N-1}s_i\]
 
-$J_{ij}$ (coumpling term) determines the strength of the force exerted in an interaction of neighbouring spins. It depends on the sign of the coupling constant whether the ground state is ordered or disordered. 
+$J_{ij}$ (coupling term) determines the strength of the force exerted in an interaction of neighboring spins. It depends on the sign of the coupling constant whether the ground state is ordered or disordered. 
 \[J_{ij} > 0 \text{the interaction is called ferromagnetic with an ordered GS: } E_0=-NJ\]
 \[J_{ij} < 0 \text{the interaction is called anti-ferromagnetic with an disordered GS: } E_0=+NJ\]
-In this model we solely consider nearest neighbours interaction with periodic boundary conditions.
-With an occupation propability for a specific spin configuration of
+In this model we solely consider nearest neighbors interaction with periodic boundary conditions.
+With an occupation probability for a specific spin configuration of
 \[P(\{c\}) \sim \exp[-\beta H(\vec{S})] \text{with } \beta = \frac{1}{k_B T}\]
 one can compute the observables listed below:\newline
 
-\textbf{1d withou magnetic field (per spin):}
+\textbf{1d without magnetic field (per spin):}
 \begin{align*}
 &\braket{u} = \sum_{\{c\}}H(\{c\})P(\{c\}) = -J \tanh(\beta J)\\
 &\braket{c} = k_B(\beta J)^2[1-\tanh^2(K)]\\
@@ -150,7 +103,7 @@ one can compute the observables listed below:\newline
 \end{align*}
 
 
-To obtain the exact solutoin for the 2d Ising Model is a story in itself.\footnote[1]{We recommend the Advanced Statisical Physics Script,
+To obtain the exact solution for the 2d Ising Model is a story in itself.\footnote[1]{We recommend the Advanced Statistical Physics Script,
 \newline Prof. Dr. Ulrich Schollw\"ock, Chapter 7}
 
 
@@ -161,7 +114,7 @@ To obtain the exact solutoin for the 2d Ising Model is a story in itself.\footno
 
 \section{Metropolis Algorithm}
 
-The aim ist to generate configurations of Ising systems in thermal equilibrium at a given temperature. The standard method, the Metropolis Algorithm, of acquiring these sample configurations is actually a modified Monte Carlo scheme 'Instead of choosing configurations randomly and then weighting them, we choose configurations with a probability $P\sim \exp(-\frac{E}{k_b T}))$ and weight them evenly.'\cite{metropolis}\newline
+The aim is to generate configurations of Ising systems in thermal equilibrium at a given temperature. The standard method, the Metropolis Algorithm, of acquiring these sample configurations is actually a modified Monte Carlo scheme 'Instead of choosing configurations randomly and then weighting them, we choose configurations with a probability $P\sim \exp(-\frac{E}{k_b T}))$ and weight them evenly.'\cite{metropolis}\newline
 The following steps illustrate the Metropolis method:\newline
 In the beginning, select some initial spin configuration $\{c^0\}$ and compute its energy $E_0 = H(\{c^0\})$.
 Then:
@@ -172,19 +125,19 @@ Then:
 \item Flip $s_i \rightarrow -s_i$ to obtain $\{c^n\} \rightarrow \{c^*\}$
 \item Compute the energy $E_*=H(\{c^*\})$ for the new configuration
 \item If $E_*\leq E_n$ accept the new configuration $\{c^{n+1}\} = \{c^*\}$
-\item Else accept the new configuration with a propability of $\exp(-\beta \bigtriangleup E)$
+\item Else accept the new configuration with a probability of $\exp(-\beta \bigtriangleup E)$
 \item If finally rejected duplicate old configuration $\{c^{n+1}\} = \{c^n\}$
 \item Compute $E_{n+1} = H(\{c^{n+1}\})$
 \end{enumerate}
 
-To speed up the simulation, we modified these steps by avoiding exponentations and total energy evaluations inside the metropolis loop.
+To speed up the simulation, we modified these steps by avoiding exponentiations and total energy evaluations inside the metropolis loop.
 On that account we calculate the 'acceptance-' or 'weightening-cases' in advance by hand and merely check whichever takes place.
-In the beginning, select some initial configuration $\{c^0\}$, compute its energy $E_0 = H(\{c^0\})$, its energy changes by $\bigtriangleup E$ by fliiping a spin and its weights $P(\bigtriangleup E)$.
+In the beginning, select some initial configuration $\{c^0\}$, compute its energy $E_0 = H(\{c^0\})$, its energy changes by $\bigtriangleup E$ by flipping a spin and its weights $P(\bigtriangleup E)$.
 \begin{enumerate}
 \item Randomly select one spin $s_i$ of the configuration $\{c\}$
 \item Check which case is applicable
 \item If it's an 'acceptance-case', flip the spin and calculate the new energy by $E_{n+1} = E_n + \bigtriangleup E$
-\item Else accept the new configuration with the applicable propability saved in the weights
+\item Else accept the new configuration with the applicable probability saved in the weights
 \end{enumerate}
 
 The specific cases can be found in Table \ref{tab1d}, \ref{tab1dh}, \ref{tab2d}.
@@ -275,10 +228,10 @@ The relationships and heritages, as well as all member functions, are shown in F
 
 \end{figure}
 
-While creating one of these objects, simultaniously the initial spin lattice is formed by calling the $getConfig()$ member function. At that moment the temperature can be defined by the $changeT()$ member function. The next step is to select randomly a spin, check the cases according to the Metropolis rules and finally flip it or not. This functionality is provided by the $getNewConfig()$ method.
-We pay particular attention on not evaluating the weigths and the total energy inside the metropolis loop. For that reason we compute them once at each temperature step and store them in an array, the $getWeights()$ and $getDeltaE()$ functions are automatically called by the $changeT()$ method.
-Since the comparison of tho boolian variables is one of the cheapest operation a computer can perform, we implement the spins as boolian variables (True stands for up and False stands for down).
-As the system needs a certain 'time' to reach the thermal equilibrium, we start measuring the observables after several spin flips i.e. several $getNewConfig()$ calls. After the equilibrium is reached we perform several measurements and take the mean afterwards. For convenience we introduce a new parameter named $sweep$, that corresponds to the number of $getNewConfig()$ calls between two successive measurements. For instance for a $100\times100$ lattice we need at least a $sweep \geq 100\times100$. In order to avoid taking non-euilibrium measurements into account and obtaining thereby falsified results, the series of measurements starts after ten sweeps.
+While creating one of these objects, simultaneously the initial spin lattice is formed by calling the $getConfig()$ member function. At that moment the temperature can be defined by the $changeT()$ member function. The next step is to select randomly a spin, check the cases according to the Metropolis rules and finally flip it or not. This functionality is provided by the $getNewConfig()$ method.
+We pay particular attention on not evaluating the weights and the total energy inside the metropolis loop. For that reason we compute them once at each temperature step and store them in an array, the $getWeights()$ and $getDeltaE()$ functions are automatically called by the $changeT()$ method.
+Since the comparison of tho boolean variables is one of the cheapest operation a computer can perform, we implement the spins as boolean variables (True stands for up and False stands for down).
+As the system needs a certain 'time' to reach the thermal equilibrium, we start measuring the observables after several spin flips i.e. several $getNewConfig()$ calls. After the equilibrium is reached we perform several measurements and take the mean afterwards. For convenience we introduce a new parameter named $sweep$, that corresponds to the number of $getNewConfig()$ calls between two successive measurements. For instance for a $100\times100$ lattice we need at least a $sweep \geq 100\times100$. In order to avoid taking non-equilibrium measurements into account and obtaining thereby falsified results, the series of measurements starts after ten sweeps.
 To speed up the simulation we used Numpy Arrays, that are known for their faster handling compared to the common Python arrays. Additionally instead of generating another costly random number in the two dimensional case, we recycle the already generated random number by an divmod operation.
 
 \section{Results}
@@ -286,7 +239,7 @@ To speed up the simulation we used Numpy Arrays, that are known for their faster
 
 \subsection{One dimension}
 
-From the theory we know that in one dimension the Ising model shows no phase transition for finite temperatures i.e. magnetization is zero for all temperatures exept $T=0$. The following Plots (Figures \ref{fig:1denmag},\ref{fig:1dheatsusz}) were generated with a lattice containing $1000$ spins. For temperatures $T\geq 0.5$ our simulation results confirm this behaviour. Due to finite size effects our simulation wrongly predicts a finite magnetization for small temperatures. To obtain a results closer to the exact solution the spinlattice size should be increased. The $-\tanh(\frac{1}{T})$ dependance of the energy as a function of the temperature could be confirmed quite well. The heat capacity shows as well the theoretically predicted characteristics qualitatively. The susceptibility diverges for $T\rightarrow0$. For a better understanding or visualization Figure \ref{fig:traj1d} shows the dynamics of the lattice configuration during the simultion. As one might expect for high temperatures the system remains totaly disorderd, whereas for small temperatures the system clusters.
+From the theory we know that in one dimension the Ising model shows no phase transition for finite temperatures i.e. magnetization is zero for all temperatures except $T=0$. The following Plots (Figures \ref{fig:1denmag},\ref{fig:1dheatsusz}) were generated with a lattice containing $1000$ spins. For temperatures $T\geq 0.5$ our simulation results confirm this behavior Due to finite size effects our simulation wrongly predicts a finite magnetization for small temperatures. To obtain a results closer to the exact solution the spin lattice size should be increased. The $-\tanh(\frac{1}{T})$ dependence of the energy as a function of the temperature could be confirmed quite well. The heat capacity shows as well the theoretically predicted characteristics qualitatively. The susceptibility diverges for $T\rightarrow0$. For a better understanding or visualization Figure \ref{fig:traj1d} shows the dynamics of the lattice configuration during the simulation As one might expect for high temperatures the system remains total disordered, whereas for small temperatures the system clusters.
 
 \begin{figure}
 
@@ -334,7 +287,7 @@ From the theory we know that in one dimension the Ising model shows no phase tra
 \subsection{One dimension with external magnetic field}
 
 
-The magnetization as a function of the external field should have an sigmoidal shape. From the exact solution we know that for small temperatures the slop for $\braket{m(h=0)}$ increases. For higher temperatures thermal fluctuations work against parallelization of the spins by the external magnetic field. For that reason the system reacts slower on changes of the external field and the linear dependance of the energy on h is not longer valid. Our simulations (Figure \ref{fig:1denmag}, \ref{fig:1denmult}) results confirm these characteristics.
+The magnetization as a function of the external field should have an sigmoidal shape. From the exact solution we know that for small temperatures the slop for $\braket{m(h=0)}$ increases. For higher temperatures thermal fluctuations work against parallelization of the spins by the external magnetic field. For that reason the system reacts slower on changes of the external field and the linear dependence of the energy on h is not longer valid. Our simulations (Figure \ref{fig:1denmag}, \ref{fig:1denmult}) results confirm these characteristics.
 
 
 
@@ -415,9 +368,75 @@ Teller. Equation of state calculations by fast computing machines. The Journal o
 
 
 
+
+
 \end{thebibliography}
 
+\section{Appendix}
+\begin{appendix}
+	
 
+
+\section*{Monte Carlo Plots}
+
+\begin{figure}
+	\centering
+	\caption{$f(x)=x^2$, volume: $[-1,1]$, ratio: 1.043}
+	\begin{minipage}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Plots/quadratisch}
+	\end{minipage}
+	\begin{minipage}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Plots/histQuadratisch}
+	\end{minipage}
+	\label{fig:linear}
+\end{figure}
+\begin{figure}
+	\centering
+	\caption{$f(x)=x^5$, volume: $[-1,1]$, ratio: 0.951, (the fit function failed to find the correct fit paramters for the Gaussian)}
+	\begin{minipage}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Plots/x5}
+	\end{minipage}
+	\begin{minipage}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Plots/x5_HIST}
+	\end{minipage}
+	\label{fig:linear}
+\end{figure}
+\begin{figure}
+	\centering
+	\caption{$f(x)=exp(x)$, volume: $[-1,1]$, ratio: 0.932}
+	\begin{minipage}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Plots/eFunktion}
+	\end{minipage}
+	\begin{minipage}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Plots/eFunktionHist}
+	\end{minipage}
+	\label{fig:linear}
+\end{figure}
+\begin{figure}
+	\centering
+	\caption{$f(x)=sin(x)$, volume: $[0,2\pi]$, ratio: 1.085}
+	\begin{minipage}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Plots/sin}
+	\end{minipage}
+	\begin{minipage}[b]{\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{Plots/sin_hist}
+	\end{minipage}
+	\label{fig:linear}
+\end{figure}
+
+
+\section*{Code Documentation}
+\subsection*{SpinLattice.py}
+
+\end{appendix}
 
 
 \end{document}
