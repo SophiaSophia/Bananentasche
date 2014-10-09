@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.9.24)  26 SEP 2014 11:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.9.24)  7 OCT 2014 22:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -154,6 +154,35 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \c@subfigure=\count101
 \c@subtable=\count102
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen121
+\extrarowheight=\dimen122
+\NC@list=\toks22
+\extratabsurround=\skip46
+\backup@length=\skip47
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pbox/pbox.sty
+Package: pbox 2011/12/07 v1.2 Dynamic parboxes
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count103
+\calc@Bcount=\count104
+\calc@Adimen=\dimen123
+\calc@Bdimen=\dimen124
+\calc@Askip=\skip48
+\calc@Bskip=\skip49
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count105
+\calc@Cskip=\skip50
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\pb@xlen=\skip51
+)
 (./Prakicumsbericht.aux
 
 LaTeX Warning: Label `fig:linear' multiply defined.
@@ -170,31 +199,31 @@ LaTeX Warning: Label `fig:linear' multiply defined.
 )
 \openout1 = `Prakicumsbericht.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
-LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen121
+\scratchcounter=\count106
+\scratchdimen=\dimen125
 \scratchbox=\box28
-\nofMPsegments=\count104
-\nofMParguments=\count105
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen122
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
-\everyMPtoPDFconversion=\toks23
+\nofMPsegments=\count107
+\nofMParguments=\count108
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count109
+\MPscratchDim=\dimen126
+\MPnumerator=\count110
+\makeMPintoPDFobject=\count111
+\everyMPtoPDFconversion=\toks24
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -245,12 +274,12 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 15.
+LaTeX Font Info:    Try loading font information for U+msa on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 15.
+LaTeX Font Info:    Try loading font information for U+msb on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -264,126 +293,145 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <Plots/linear.png, id=22, 578.16pt x 433.62pt>
 File: Plots/linear.png Graphic file (type png)
  <use Plots/linear.png>
-Package pdftex.def Info: Plots/linear.png used on input line 60.
+Package pdftex.def Info: Plots/linear.png used on input line 63.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 <Plots/linearhist.png, id=24, 578.16pt x 433.62pt>
 File: Plots/linearhist.png Graphic file (type png)
  <use Plots/linearhist.png>
-Package pdftex.def Info: Plots/linearhist.png used on input line 64.
+Package pdftex.def Info: Plots/linearhist.png used on input line 67.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 
-LaTeX Warning: Float too large for page by 32.9912pt on input line 67.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Float too large for page by 32.9912pt on input line 70.
 
 <Plots/quadratisch.png, id=25, 578.16pt x 433.62pt>
 File: Plots/quadratisch.png Graphic file (type png)
 
 <use Plots/quadratisch.png>
-Package pdftex.def Info: Plots/quadratisch.png used on input line 73.
+Package pdftex.def Info: Plots/quadratisch.png used on input line 76.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 <Plots/histQuadratisch.png, id=26, 578.16pt x 433.62pt>
 File: Plots/histQuadratisch.png Graphic file (type png)
 
 <use Plots/histQuadratisch.png>
-Package pdftex.def Info: Plots/histQuadratisch.png used on input line 77.
+Package pdftex.def Info: Plots/histQuadratisch.png used on input line 80.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 
-LaTeX Warning: Float too large for page by 32.9912pt on input line 80.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Float too large for page by 32.9912pt on input line 83.
 
 <Plots/x5.png, id=27, 578.16pt x 433.62pt>
 File: Plots/x5.png Graphic file (type png)
  <use Plots/x5.png>
-Package pdftex.def Info: Plots/x5.png used on input line 86.
+Package pdftex.def Info: Plots/x5.png used on input line 89.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 <Plots/x5_HIST.png, id=28, 578.16pt x 433.62pt>
 File: Plots/x5_HIST.png Graphic file (type png)
  <use Plots/x5_HIST.png>
-Package pdftex.def Info: Plots/x5_HIST.png used on input line 90.
+Package pdftex.def Info: Plots/x5_HIST.png used on input line 93.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 
-LaTeX Warning: Float too large for page by 47.4912pt on input line 93.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Float too large for page by 47.4912pt on input line 96.
 
 <Plots/eFunktion.png, id=29, 578.16pt x 433.62pt>
 File: Plots/eFunktion.png Graphic file (type png)
  <use Plots/eFunktion.png>
-Package pdftex.def Info: Plots/eFunktion.png used on input line 99.
+Package pdftex.def Info: Plots/eFunktion.png used on input line 102.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 <Plots/eFunktionHist.png, id=30, 578.16pt x 433.62pt>
 File: Plots/eFunktionHist.png Graphic file (type png)
 
 <use Plots/eFunktionHist.png>
-Package pdftex.def Info: Plots/eFunktionHist.png used on input line 103.
+Package pdftex.def Info: Plots/eFunktionHist.png used on input line 106.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 
-LaTeX Warning: Float too large for page by 32.9912pt on input line 106.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
+LaTeX Warning: Float too large for page by 32.9912pt on input line 109.
 
 <Plots/sin.png, id=31, 578.16pt x 433.62pt>
 File: Plots/sin.png Graphic file (type png)
  <use Plots/sin.png>
-Package pdftex.def Info: Plots/sin.png used on input line 112.
+Package pdftex.def Info: Plots/sin.png used on input line 115.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 <Plots/sin_hist.png, id=32, 578.16pt x 433.62pt>
 File: Plots/sin_hist.png Graphic file (type png)
  <use Plots/sin_hist.png>
-Package pdftex.def Info: Plots/sin_hist.png used on input line 116.
+Package pdftex.def Info: Plots/sin_hist.png used on input line 119.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 
-LaTeX Warning: Float too large for page by 32.9912pt on input line 119.
+LaTeX Warning: Float too large for page by 32.9912pt on input line 122.
+
+
+Overfull \hbox (9.27005pt too wide) detected at line 132
+\OML/cmm/m/it/12 J[] > \OT1/cmr/m/n/12 0[]\OML/cmm/m/it/12 E[] \OT1/cmr/m/n/12 
+= \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 NJ
+ []
+
+
+Overfull \hbox (47.32787pt too wide) detected at line 133
+\OML/cmm/m/it/12 J[] < \OT1/cmr/m/n/12 0[]\OML/cmm/m/it/12 E[] \OT1/cmr/m/n/12 
+= +\OML/cmm/m/it/12 NJ
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+
+ []
+
+[3] [4 <./Plots/linear.png> <./Plots/linearhist.png>] [5 <./Plots/quadratisch.p
+ng> <./Plots/histQuadratisch.png>] [6 <./Plots/x5.png> <./Plots/x5_HIST.png>]
+[7 <./Plots/eFunktion.png> <./Plots/eFunktionHist.png>] [8 <./Plots/sin.png> <.
+/Plots/sin_hist.png>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (13.77089pt too wide) in paragraph at lines 215--232
+ [][] 
+ []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3 <./Plots/linear.png> <./Plots/linearhist.png>] [4 <./Plots/quadratisch.png> 
-<./Plots/histQuadratisch.png>] [5 <./Plots/x5.png> <./Plots/x5_HIST.png>]
-[6 <./Plots/eFunktion.png> <./Plots/eFunktionHist.png>] [7 <./Plots/sin.png> <.
-/Plots/sin_hist.png>] (./Prakicumsbericht.aux)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9] [10] [11] (./Prakicumsbericht.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3596 strings out of 494978
- 53184 string characters out of 6180203
- 109138 words of memory out of 5000000
- 6761 multiletter control sequences out of 15000+600000
- 12096 words of font info for 47 fonts, out of 8000000 for 9000
+ 3793 strings out of 494978
+ 55692 string characters out of 6180203
+ 119725 words of memory out of 5000000
+ 6943 multiletter control sequences out of 15000+600000
+ 12741 words of font info for 50 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 42i,11n,40p,421b,305s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,16n,40p,467b,313s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy8.pfb>
-Output written on Prakicumsbericht.pdf (8 pages, 515700 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Prakicumsbericht.pdf (12 pages, 564037 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 116 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -125,18 +125,18 @@ To show this characteristic we define the ratio $\rho$.
 \section{Ising Model}
 
 The Ising model is a well known toy model for ferromagnetism, for that reason it will not be explained in detail here.
-The Hamiltonian for a predefined spin configration $\{c\}$ is given by:
+The Hamiltonian for a predefined spin configuration $\{c\}$ is given by:
  \[H(\{c\})= - \frac{1}{2}\sum_{i=0}^{N-1} \sum_{j=0}^{N-1} J_{ij} s_i s_j - B \sum_{i=0}^{N-1}s_i\]
 
-$J_{ij}$ (coumpling term) determines the strength of the force exerted in an interaction of neighbouring spins. It depends on the sign of the coupling constant whether the ground state is ordered or disordered. 
+$J_{ij}$ (coupling term) determines the strength of the force exerted in an interaction of neighbouring spins. It depends on the sign of the coupling constant whether the ground state is ordered or disordered. 
 \[J_{ij} > 0 \text{the interaction is called ferromagnetic with an ordered GS: } E_0=-NJ\]
 \[J_{ij} < 0 \text{the interaction is called anti-ferromagnetic with an disordered GS: } E_0=+NJ\]
 In this model we solely consider nearest neighbours interaction with periodic boundary conditions.
-With an occupation propability for a specific spin configuration of
+With an occupation probability for a specific spin configuration of
 \[P(\{c\}) \sim \exp[-\beta H(\vec{S})] \text{with } \beta = \frac{1}{k_B T}\]
 one can compute the observables listed below:\newline
 
-\textbf{1d withou magnetic field (per spin):}
+\textbf{1d without magnetic field (per spin):}
 \begin{align*}
 &\braket{u} = \sum_{\{c\}}H(\{c\})P(\{c\}) = -J \tanh(\beta J)\\
 &\braket{c} = k_B(\beta J)^2[1-\tanh^2(K)]\\
@@ -151,8 +151,8 @@ one can compute the observables listed below:\newline
 \end{align*}
 
 
-To obtain the exact solutoin for the 2d Ising Model is a story in itself.\footnote[1]{We recommend the Advanced Statisical Physics Script,
-\newline Prof. Dr. Ulrich Schollwoeck, Chapter 7}
+To obtain the exact solution for the 2d Ising Model is a story in itself.\footnote[1]{We recommend the Advanced Statistical Physics Script,
+\newline Prof. Dr. Ulrich Schollweck, Chapter 7}
 
 
 
@@ -173,19 +173,19 @@ Then:
 \item Flip $s_i \rightarrow -s_i$ to obtain $\{c^n\} \rightarrow \{c^*\}$
 \item Compute the energy $E_*=H(\{c^*\})$ for the new configuration
 \item If $E_*\leq E_n$ accept the new configuration $\{c^{n+1}\} = \{c^*\}$
-\item Else accept the new configuration with a propability of $\exp(-\beta \bigtriangleup E)$
+\item Else accept the new configuration with a probability of $\exp(-\beta \bigtriangleup E)$
 \item If finally rejected duplicate old configuration $\{c^{n+1}\} = \{c^n\}$
 \item Compute $E_{n+1} = H(\{c^{n+1}\})$
 \end{enumerate}
 
 To speed up the simulation, we modified these steps by avoiding exponentations and total energy evaluations inside the metropolis loop.
 On that account we calculate the 'acceptance-' or 'weightening-cases' in advance by hand and merely check whichever takes place.
-In the beginning, select some initial configuration $\{c^0\}$, compute its energy $E_0 = H(\{c^0\})$, its energy changes by $\bigtriangleup E$ by fliiping a spin and its weights $P(\bigtriangleup E)$.
+In the beginning, select some initial configuration $\{c^0\}$, compute its energy $E_0 = H(\{c^0\})$, its energy changes by $\bigtriangleup E$ by flipping a spin and its weights $P(\bigtriangleup E)$.
 \begin{enumerate}
 \item Randomly select one spin $s_i$ of the configuration $\{c\}$
 \item Check which case is applicable
 \item If it's an 'acceptance-case', flip the spin and calculate the new energy by $E_{n+1} = E_n + \bigtriangleup E$
-\item Else accept the new configuration with the applicable propability saved in the weights
+\item Else accept the new configuration with the applicable probability saved in the weights
 \end{enumerate}
 
 
