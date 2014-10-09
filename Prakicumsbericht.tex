@@ -8,11 +8,17 @@
 \usepackage{subcaption}
 \usepackage{array}
 \usepackage{pbox}
+\usepackage{verbatim}
+\usepackage{alltt}
+
 
 
 \author{Tobias G\"oppel and Sophia Kronthaler}
 \title{Theoretical Practical Course in Computational Physics}
 \begin{document}
+
+
+
 
 \maketitle
 
@@ -355,9 +361,11 @@ The magnetization as a function of the external field should have an sigmoidal s
 
 
 
+\begin{figure}
+	\includegraphics[width=\linewidth]{Plots/spin1dh}
+\end{figure}
 
-
-
+\newpage
 \begin{thebibliography}{9}
 
 
@@ -431,11 +439,16 @@ Teller. Equation of state calculations by fast computing machines. The Journal o
 	\end{minipage}
 	\label{fig:linear}
 \end{figure}
-
+\newpage
 
 \section*{Code Documentation}
-\subsection*{SpinLattice.py}
+\subsection*{Spin\_Lattice.py}
+{\fontsize{10}{10}
 
+	\begin{alltt}
+		\input{Docs/SpinLattice.txt}
+	\end{alltt}
+}
 \end{appendix}
 
 

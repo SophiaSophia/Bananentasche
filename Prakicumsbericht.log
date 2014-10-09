@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.9.24)  9 OCT 2014 23:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Debian) (preloaded format=pdflatex 2014.9.24)  10 OCT 2014 00:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -183,6 +183,15 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \pb@xlen=\skip51
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks23
+\verbatim@line=\toks24
+\verbatim@in@stream=\read1
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
 (./Prakicumsbericht.aux
 
 LaTeX Warning: Label `fig:linear' multiply defined.
@@ -199,18 +208,18 @@ LaTeX Warning: Label `fig:linear' multiply defined.
 )
 \openout1 = `Prakicumsbericht.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count106
@@ -218,12 +227,12 @@ LaTeX Font Info:    ... okay on input line 15.
 \scratchbox=\box28
 \nofMPsegments=\count107
 \nofMParguments=\count108
-\everyMPshowfont=\toks23
+\everyMPshowfont=\toks25
 \MPscratchCnt=\count109
 \MPscratchDim=\dimen126
 \MPnumerator=\count110
 \makeMPintoPDFobject=\count111
-\everyMPtoPDFconversion=\toks24
+\everyMPtoPDFconversion=\toks26
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -274,12 +283,12 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 17.
+LaTeX Font Info:    Try loading font information for U+msa on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 17.
+LaTeX Font Info:    Try loading font information for U+msb on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -291,46 +300,49 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [1]
 
-Package caption Warning: \label without proper \caption on input line 60.
+Package caption Warning: \label without proper \caption on input line 63.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:monte' on page 2 undefined on input line 56.
+LaTeX Warning: Reference `fig:monte' on page 2 undefined on input line 62.
+
+
+LaTeX Warning: Reference `ap:montecarlo' on page 2 undefined on input line 62.
 
 <Plots/linear.png, id=12, 578.16pt x 433.62pt>
 File: Plots/linear.png Graphic file (type png)
  <use Plots/linear.png>
-Package pdftex.def Info: Plots/linear.png used on input line 65.
+Package pdftex.def Info: Plots/linear.png used on input line 71.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 <Plots/linearhist.png, id=14, 578.16pt x 433.62pt>
 File: Plots/linearhist.png Graphic file (type png)
  <use Plots/linearhist.png>
-Package pdftex.def Info: Plots/linearhist.png used on input line 69.
+Package pdftex.def Info: Plots/linearhist.png used on input line 75.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 
-LaTeX Warning: Float too large for page by 32.9912pt on input line 72.
+LaTeX Warning: Float too large for page by 32.9912pt on input line 78.
 
 [2] [3 <./Plots/linear.png> <./Plots/linearhist.png>]
-Overfull \hbox (9.27005pt too wide) detected at line 84
+Overfull \hbox (9.27005pt too wide) detected at line 90
 \OML/cmm/m/it/12 J[] > \OT1/cmr/m/n/12 0[]\OML/cmm/m/it/12 E[] \OT1/cmr/m/n/12 
 = \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 NJ
  []
 
 
-Overfull \hbox (47.32787pt too wide) detected at line 85
+Overfull \hbox (47.32787pt too wide) detected at line 91
 \OML/cmm/m/it/12 J[] < \OT1/cmr/m/n/12 0[]\OML/cmm/m/it/12 E[] \OT1/cmr/m/n/12 
 = +\OML/cmm/m/it/12 NJ
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--90
+Underfull \hbox (badness 10000) in paragraph at lines 94--96
 
  []
 
 [4]
-Overfull \hbox (13.77089pt too wide) in paragraph at lines 169--187
+Overfull \hbox (13.77089pt too wide) in paragraph at lines 175--193
  [][] 
  []
 
@@ -338,60 +350,60 @@ Overfull \hbox (13.77089pt too wide) in paragraph at lines 169--187
 File: Plots/umlSpinLattice.png Graphic file (type png)
 
 <use Plots/umlSpinLattice.png>
-Package pdftex.def Info: Plots/umlSpinLattice.png used on input line 225.
+Package pdftex.def Info: Plots/umlSpinLattice.png used on input line 231.
 (pdftex.def)             Requested size: 390.0pt x 343.10585pt.
  [7 <./Plots/umlSpinLattice.png>]
 <Plots/E_Mean_1.png, id=47, 578.16pt x 433.62pt>
 File: Plots/E_Mean_1.png Graphic file (type png)
  <use Plots/E_Mean_1.png>
-Package pdftex.def Info: Plots/E_Mean_1.png used on input line 248.
+Package pdftex.def Info: Plots/E_Mean_1.png used on input line 254.
 (pdftex.def)             Requested size: 369.88582pt x 277.40999pt.
 
 <Plots/Mag_Mean_1.png, id=48, 578.16pt x 433.62pt>
 File: Plots/Mag_Mean_1.png Graphic file (type png)
  <use Plots/Mag_Mean_1.png>
-Package pdftex.def Info: Plots/Mag_Mean_1.png used on input line 249.
+Package pdftex.def Info: Plots/Mag_Mean_1.png used on input line 255.
 (pdftex.def)             Requested size: 369.88582pt x 277.40999pt.
 
 
-LaTeX Warning: Float too large for page by 10.52003pt on input line 253.
+LaTeX Warning: Float too large for page by 10.52003pt on input line 259.
 
 <Plots/Heat_Capacitiy_1.png, id=49, 578.16pt x 433.62pt>
 File: Plots/Heat_Capacitiy_1.png Graphic file (type png)
 
 <use Plots/Heat_Capacitiy_1.png>
-Package pdftex.def Info: Plots/Heat_Capacitiy_1.png used on input line 260.
+Package pdftex.def Info: Plots/Heat_Capacitiy_1.png used on input line 266.
 (pdftex.def)             Requested size: 369.88582pt x 277.40999pt.
 
 <Plots/Suszeptibility_1.png, id=50, 578.16pt x 433.62pt>
 File: Plots/Suszeptibility_1.png Graphic file (type png)
 
 <use Plots/Suszeptibility_1.png>
-Package pdftex.def Info: Plots/Suszeptibility_1.png used on input line 261.
+Package pdftex.def Info: Plots/Suszeptibility_1.png used on input line 267.
 (pdftex.def)             Requested size: 369.88582pt x 277.40999pt.
 
 
-LaTeX Warning: Float too large for page by 10.52003pt on input line 265.
+LaTeX Warning: Float too large for page by 10.52003pt on input line 271.
 
 <Plots/Trajectory_1D_1.png, id=51, 518.1759pt x 225.4824pt>
 File: Plots/Trajectory_1D_1.png Graphic file (type png)
 
 <use Plots/Trajectory_1D_1.png>
-Package pdftex.def Info: Plots/Trajectory_1D_1.png used on input line 272.
+Package pdftex.def Info: Plots/Trajectory_1D_1.png used on input line 278.
 (pdftex.def)             Requested size: 386.95764pt x 168.38885pt.
 
 <Plots/Trajectory_1D_05.png, id=52, 511.6716pt x 196.5744pt>
 File: Plots/Trajectory_1D_05.png Graphic file (type png)
 
 <use Plots/Trajectory_1D_05.png>
-Package pdftex.def Info: Plots/Trajectory_1D_05.png used on input line 276.
+Package pdftex.def Info: Plots/Trajectory_1D_05.png used on input line 282.
 (pdftex.def)             Requested size: 384.1122pt x 147.5714pt.
 
 <Plots/Trajectory_1D_02.png, id=53, 509.5035pt x 203.8014pt>
 File: Plots/Trajectory_1D_02.png Graphic file (type png)
 
 <use Plots/Trajectory_1D_02.png>
-Package pdftex.def Info: Plots/Trajectory_1D_02.png used on input line 280.
+Package pdftex.def Info: Plots/Trajectory_1D_02.png used on input line 286.
 (pdftex.def)             Requested size: 382.68947pt x 153.07455pt.
  [8] [9 <./Plots/E_Mean_1.png> <./Plots/Mag_Mean_1.png>] [10 <./Plots/Heat_Capa
 citiy_1.png> <./Plots/Suszeptibility_1.png>]
@@ -401,8 +413,8 @@ ctory_1D_02.png>]
 File: Plots/differnt_t_and_h_s_DOTS.png Graphic file (type png)
 
 <use Plots/differnt_t_and_h_s_DOTS.png>
-Package pdftex.def Info: Plots/differnt_t_and_h_s_DOTS.png used on input line 2
-96.
+Package pdftex.def Info: Plots/differnt_t_and_h_s_DOTS.png used on input line 3
+02.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
 
 <Plots/differnt_t_and_h_s_ENERGY.png, id=74, 578.16pt x 433.62pt>
@@ -410,14 +422,14 @@ File: Plots/differnt_t_and_h_s_ENERGY.png Graphic file (type png)
 
 <use Plots/differnt_t_and_h_s_ENERGY.png>
 Package pdftex.def Info: Plots/differnt_t_and_h_s_ENERGY.png used on input line
- 303.
+ 309.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
 
 <Plots/differnt_h_s_10000.png, id=75, 578.16pt x 433.62pt>
 File: Plots/differnt_h_s_10000.png Graphic file (type png)
 
 <use Plots/differnt_h_s_10000.png>
-Package pdftex.def Info: Plots/differnt_h_s_10000.png used on input line 310.
+Package pdftex.def Info: Plots/differnt_h_s_10000.png used on input line 316.
 (pdftex.def)             Requested size: 341.43306pt x 256.07178pt.
  [12 <./Plots/differnt_t_and_h_s_DOTS.png>]
 [13 <./Plots/differnt_t_and_h_s_ENERGY.png> <./Plots/differnt_h_s_10000.png>]
@@ -425,150 +437,324 @@ Package pdftex.def Info: Plots/differnt_h_s_10000.png used on input line 310.
 File: Plots/Trajectory_2D_0.png Graphic file (type png)
 
 <use Plots/Trajectory_2D_0.png>
-Package pdftex.def Info: Plots/Trajectory_2D_0.png used on input line 325.
+Package pdftex.def Info: Plots/Trajectory_2D_0.png used on input line 331.
 (pdftex.def)             Requested size: 199.16928pt x 198.13109pt.
 
 <Plots/Trajectory_2D_1.png, id=87, 578.16pt x 433.62pt>
 File: Plots/Trajectory_2D_1.png Graphic file (type png)
 
 <use Plots/Trajectory_2D_1.png>
-Package pdftex.def Info: Plots/Trajectory_2D_1.png used on input line 325.
+Package pdftex.def Info: Plots/Trajectory_2D_1.png used on input line 331.
 (pdftex.def)             Requested size: 199.16928pt x 198.13109pt.
 
 <Plots/Trajectory_2D_2.png, id=88, 578.16pt x 433.62pt>
 File: Plots/Trajectory_2D_2.png Graphic file (type png)
 
 <use Plots/Trajectory_2D_2.png>
-Package pdftex.def Info: Plots/Trajectory_2D_2.png used on input line 326.
+Package pdftex.def Info: Plots/Trajectory_2D_2.png used on input line 332.
 (pdftex.def)             Requested size: 199.16928pt x 198.13109pt.
 
 <Plots/Trajectory_2D_3.png, id=89, 578.16pt x 433.62pt>
 File: Plots/Trajectory_2D_3.png Graphic file (type png)
 
 <use Plots/Trajectory_2D_3.png>
-Package pdftex.def Info: Plots/Trajectory_2D_3.png used on input line 326.
+Package pdftex.def Info: Plots/Trajectory_2D_3.png used on input line 332.
 (pdftex.def)             Requested size: 199.16928pt x 198.13109pt.
 
 <Plots/Trajectory_2D_4.png, id=90, 578.16pt x 433.62pt>
 File: Plots/Trajectory_2D_4.png Graphic file (type png)
 
 <use Plots/Trajectory_2D_4.png>
-Package pdftex.def Info: Plots/Trajectory_2D_4.png used on input line 327.
+Package pdftex.def Info: Plots/Trajectory_2D_4.png used on input line 333.
 (pdftex.def)             Requested size: 199.16928pt x 198.13109pt.
 
 <Plots/Trajectory_2D_5.png, id=91, 578.16pt x 433.62pt>
 File: Plots/Trajectory_2D_5.png Graphic file (type png)
 
 <use Plots/Trajectory_2D_5.png>
-Package pdftex.def Info: Plots/Trajectory_2D_5.png used on input line 327.
+Package pdftex.def Info: Plots/Trajectory_2D_5.png used on input line 333.
 (pdftex.def)             Requested size: 199.16928pt x 198.13109pt.
 
-Overfull \hbox (32.33856pt too wide) in paragraph at lines 324--329
+Overfull \hbox (32.33856pt too wide) in paragraph at lines 330--335
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 54.44336pt on input line 330.
+LaTeX Warning: Float too large for page by 54.44336pt on input line 336.
 
 <Plots/E_Mean_2.png, id=92, 578.16pt x 433.62pt>
 File: Plots/E_Mean_2.png Graphic file (type png)
  <use Plots/E_Mean_2.png>
-Package pdftex.def Info: Plots/E_Mean_2.png used on input line 337.
+Package pdftex.def Info: Plots/E_Mean_2.png used on input line 343.
 (pdftex.def)             Requested size: 369.88582pt x 277.40999pt.
 
 <Plots/Mag_Mean_2.png, id=93, 578.16pt x 433.62pt>
 File: Plots/Mag_Mean_2.png Graphic file (type png)
  <use Plots/Mag_Mean_2.png>
-Package pdftex.def Info: Plots/Mag_Mean_2.png used on input line 338.
+Package pdftex.def Info: Plots/Mag_Mean_2.png used on input line 344.
 (pdftex.def)             Requested size: 369.88582pt x 277.40999pt.
 
 <Plots/Heat_Capacitiy_2.png, id=94, 578.16pt x 433.62pt>
 File: Plots/Heat_Capacitiy_2.png Graphic file (type png)
 
 <use Plots/Heat_Capacitiy_2.png>
-Package pdftex.def Info: Plots/Heat_Capacitiy_2.png used on input line 348.
+Package pdftex.def Info: Plots/Heat_Capacitiy_2.png used on input line 354.
 (pdftex.def)             Requested size: 369.88582pt x 277.40999pt.
 
 <Plots/Suszeptibility_2.png, id=95, 578.16pt x 433.62pt>
 File: Plots/Suszeptibility_2.png Graphic file (type png)
 
 <use Plots/Suszeptibility_2.png>
-Package pdftex.def Info: Plots/Suszeptibility_2.png used on input line 349.
+Package pdftex.def Info: Plots/Suszeptibility_2.png used on input line 355.
 (pdftex.def)             Requested size: 369.88582pt x 277.40999pt.
 
 
-LaTeX Warning: Float too large for page by 10.52003pt on input line 352.
+LaTeX Warning: Float too large for page by 10.52003pt on input line 358.
 
-<Plots/quadratisch.png, id=96, 578.16pt x 433.62pt>
+<Plots/spin1dh.pdf, id=96, 851.18pt x 459.7175pt>
+File: Plots/spin1dh.pdf Graphic file (type pdf)
+ <use Plots/spin1dh.pdf>
+Package pdftex.def Info: Plots/spin1dh.pdf used on input line 365.
+(pdftex.def)             Requested size: 390.0pt x 210.63786pt.
+
+[14 <./Plots/spin1dh.pdf>] [15 <./Plots/Trajectory_2D_0.png> <./Plots/Trajector
+y_2D_1.png> <./Plots/Trajectory_2D_2.png> <./Plots/Trajectory_2D_3.png> <./Plot
+s/Trajectory_2D_4.png> <./Plots/Trajectory_2D_5.png>] [16 <./Plots/E_Mean_2.png
+> <./Plots/Mag_Mean_2.png>] [17 <./Plots/Heat_Capacitiy_2.png> <./Plots/Suszept
+ibility_2.png>] <Plots/quadratisch.png, id=121, 578.16pt x 433.62pt>
 File: Plots/quadratisch.png Graphic file (type png)
 
 <use Plots/quadratisch.png>
-Package pdftex.def Info: Plots/quadratisch.png used on input line 385.
+Package pdftex.def Info: Plots/quadratisch.png used on input line 395.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
-<Plots/histQuadratisch.png, id=97, 578.16pt x 433.62pt>
+<Plots/histQuadratisch.png, id=122, 578.16pt x 433.62pt>
 File: Plots/histQuadratisch.png Graphic file (type png)
 
 <use Plots/histQuadratisch.png>
-Package pdftex.def Info: Plots/histQuadratisch.png used on input line 389.
+Package pdftex.def Info: Plots/histQuadratisch.png used on input line 399.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 
-LaTeX Warning: Float too large for page by 32.9912pt on input line 392.
+LaTeX Warning: Float too large for page by 32.9912pt on input line 402.
 
-<Plots/x5.png, id=98, 578.16pt x 433.62pt>
+<Plots/x5.png, id=123, 578.16pt x 433.62pt>
 File: Plots/x5.png Graphic file (type png)
  <use Plots/x5.png>
-Package pdftex.def Info: Plots/x5.png used on input line 398.
+Package pdftex.def Info: Plots/x5.png used on input line 408.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
-<Plots/x5_HIST.png, id=99, 578.16pt x 433.62pt>
+<Plots/x5_HIST.png, id=124, 578.16pt x 433.62pt>
 File: Plots/x5_HIST.png Graphic file (type png)
  <use Plots/x5_HIST.png>
-Package pdftex.def Info: Plots/x5_HIST.png used on input line 402.
+Package pdftex.def Info: Plots/x5_HIST.png used on input line 412.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 
-LaTeX Warning: Float too large for page by 47.4912pt on input line 405.
+LaTeX Warning: Float too large for page by 47.4912pt on input line 415.
 
-<Plots/eFunktion.png, id=100, 578.16pt x 433.62pt>
+<Plots/eFunktion.png, id=125, 578.16pt x 433.62pt>
 File: Plots/eFunktion.png Graphic file (type png)
  <use Plots/eFunktion.png>
-Package pdftex.def Info: Plots/eFunktion.png used on input line 411.
+Package pdftex.def Info: Plots/eFunktion.png used on input line 421.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
-<Plots/eFunktionHist.png, id=101, 578.16pt x 433.62pt>
+<Plots/eFunktionHist.png, id=126, 578.16pt x 433.62pt>
 File: Plots/eFunktionHist.png Graphic file (type png)
 
 <use Plots/eFunktionHist.png>
-Package pdftex.def Info: Plots/eFunktionHist.png used on input line 415.
+Package pdftex.def Info: Plots/eFunktionHist.png used on input line 425.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 
-LaTeX Warning: Float too large for page by 32.9912pt on input line 418.
+LaTeX Warning: Float too large for page by 32.9912pt on input line 428.
 
-<Plots/sin.png, id=102, 578.16pt x 433.62pt>
+<Plots/sin.png, id=127, 578.16pt x 433.62pt>
 File: Plots/sin.png Graphic file (type png)
  <use Plots/sin.png>
-Package pdftex.def Info: Plots/sin.png used on input line 424.
+Package pdftex.def Info: Plots/sin.png used on input line 434.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
-<Plots/sin_hist.png, id=103, 578.16pt x 433.62pt>
+<Plots/sin_hist.png, id=128, 578.16pt x 433.62pt>
 File: Plots/sin_hist.png Graphic file (type png)
  <use Plots/sin_hist.png>
-Package pdftex.def Info: Plots/sin_hist.png used on input line 428.
+Package pdftex.def Info: Plots/sin_hist.png used on input line 438.
 (pdftex.def)             Requested size: 390.0pt x 292.4956pt.
 
 
-LaTeX Warning: Float too large for page by 32.9912pt on input line 431.
+LaTeX Warning: Float too large for page by 32.9912pt on input line 441.
 
-[14] [15 <./Plots/Trajectory_2D_0.png> <./Plots/Trajectory_2D_1.png> <./Plots/T
-rajectory_2D_2.png> <./Plots/Trajectory_2D_3.png> <./Plots/Trajectory_2D_4.png>
- <./Plots/Trajectory_2D_5.png>] [16 <./Plots/E_Mean_2.png> <./Plots/Mag_Mean_2.
-png>] [17 <./Plots/Heat_Capacitiy_2.png> <./Plots/Suszeptibility_2.png>]
-[18 <./Plots/quadratisch.png> <./Plots/histQuadratisch.png>] [19 <./Plots/x5.pn
-g> <./Plots/x5_HIST.png>] [20 <./Plots/eFunktion.png> <./Plots/eFunktionHist.pn
-g>] [21 <./Plots/sin.png> <./Plots/sin_hist.png>] (./Prakicumsbericht.aux)
+[18] [19 <./Plots/quadratisch.png> <./Plots/histQuadratisch.png>] [20 <./Plots/
+x5.png> <./Plots/x5_HIST.png>] [21 <./Plots/eFunktion.png> <./Plots/eFunktionHi
+st.png>] [22 <./Plots/sin.png> <./Plots/sin_hist.png>] (./Docs/SpinLattice.txt
+Overfull \hbox (8.99652pt too wide) in paragraph at lines 25--25
+[]     \OT1/cmtt/m/n/10 |      hDirection         |  for h>= 0 all spins are up
+ if ordered=True[] 
+ []
+
+
+Overfull \hbox (29.99634pt too wide) in paragraph at lines 26--26
+[]     \OT1/cmtt/m/n/10 |      h                  |   absolute value of the ext
+ernal magnetic field[] 
+ []
+
+
+Overfull \hbox (71.99597pt too wide) in paragraph at lines 27--27
+[]     \OT1/cmtt/m/n/10 |      config             |   container for the initial
+ configuration (getConfig())[] 
+ []
+
+
+Overfull \hbox (50.99615pt too wide) in paragraph at lines 31--31
+[]     \OT1/cmtt/m/n/10 |      to adjust the member variable beta according to 
+the newT: beta = 1./newT[] 
+ []
+
+
+Overfull \hbox (40.49625pt too wide) in paragraph at lines 36--36
+[]     \OT1/cmtt/m/n/10 |      simplifies life by returning the correct index w
+ith regard to periodic[] 
+ []
+
+
+Overfull \hbox (45.7462pt too wide) in paragraph at lines 44--44
+[]     \OT1/cmtt/m/n/10 |      computes the Boltzmann weight factor needed in t
+he Metropolis Algorithm[] 
+ []
+
+[23]
+Overfull \hbox (82.49588pt too wide) in paragraph at lines 60--60
+[]     \OT1/cmtt/m/n/10 |      =================|==============================
+==============================[] 
+ []
+
+
+Overfull \hbox (8.99652pt too wide) in paragraph at lines 63--63
+[]     \OT1/cmtt/m/n/10 |                       |  checking in the Metropolis A
+lgorithm weather[] 
+ []
+
+
+Overfull \hbox (92.99579pt too wide) in paragraph at lines 65--65
+[]     \OT1/cmtt/m/n/10 |      weight           |  container for Boltzmann weig
+ht factor, saved in the beginnig[] 
+ []
+
+
+Overfull \hbox (66.74602pt too wide) in paragraph at lines 90--90
+[]     \OT1/cmtt/m/n/10 |      this function computes the energy difference due
+ to the prospective flip of[] 
+ []
+
+
+Overfull \hbox (87.74583pt too wide) in paragraph at lines 91--91
+[]     \OT1/cmtt/m/n/10 |      the spin si and flips the randomly chosen spin w
+ith if the metropolis algorithm[] 
+ []
+
+
+Overfull \hbox (19.49643pt too wide) in paragraph at lines 98--98
+[]     \OT1/cmtt/m/n/10 |  ----------------------------------------------------
+------------------[] 
+ []
+
+
+Overfull \hbox (50.99615pt too wide) in paragraph at lines 102--102
+[]     \OT1/cmtt/m/n/10 |      to adjust the member variable beta according to 
+the newT: beta = 1./newT[] 
+ []
+
+
+Overfull \hbox (40.49625pt too wide) in paragraph at lines 107--107
+[]     \OT1/cmtt/m/n/10 |      simplifies life by returning the correct index w
+ith regard to periodic[] 
+ []
+
+[24]
+Overfull \hbox (45.7462pt too wide) in paragraph at lines 115--115
+[]     \OT1/cmtt/m/n/10 |      computes the Boltzmann weight factor needed in t
+he Metropolis Algorithm[] 
+ []
+
+
+Overfull \hbox (45.7462pt too wide) in paragraph at lines 148--148
+[]     \OT1/cmtt/m/n/10 |      the simulation we only add or distract small amo
+unts of energy (deltaE)[] 
+ []
+
+
+Overfull \hbox (19.49643pt too wide) in paragraph at lines 153--153
+[]     \OT1/cmtt/m/n/10 |  ----------------------------------------------------
+------------------[] 
+ []
+
+
+Overfull \hbox (82.49588pt too wide) in paragraph at lines 158--158
+[]     \OT1/cmtt/m/n/10 |      =================|==============================
+==============================[] 
+ []
+
+
+Overfull \hbox (8.99652pt too wide) in paragraph at lines 161--161
+[]     \OT1/cmtt/m/n/10 |                       |  checking in the Metropolis A
+lgorithm weather[] 
+ []
+
+
+Overfull \hbox (92.99579pt too wide) in paragraph at lines 163--163
+[]     \OT1/cmtt/m/n/10 |      weight           |  container for Boltzmann weig
+ht factor, saved in the beginnig[] 
+ []
+
+[25]
+Overfull \hbox (19.49643pt too wide) in paragraph at lines 184--184
+[]     \OT1/cmtt/m/n/10 |  ----------------------------------------------------
+------------------[] 
+ []
+
+
+Overfull \hbox (50.99615pt too wide) in paragraph at lines 188--188
+[]     \OT1/cmtt/m/n/10 |      to adjust the member variable beta according to 
+the newT: beta = 1./newT[] 
+ []
+
+
+Overfull \hbox (40.49625pt too wide) in paragraph at lines 193--193
+[]     \OT1/cmtt/m/n/10 |      simplifies life by returning the correct index w
+ith regard to periodic[] 
+ []
+
+
+Overfull \hbox (45.7462pt too wide) in paragraph at lines 201--201
+[]     \OT1/cmtt/m/n/10 |      computes the Boltzmann weight factor needed in t
+he Metropolis Algorithm[] 
+ []
+
+[26]
+Overfull \hbox (19.49643pt too wide) in paragraph at lines 248--248
+[]     \OT1/cmtt/m/n/10 |  ----------------------------------------------------
+------------------[] 
+ []
+
+
+Overfull \hbox (50.99615pt too wide) in paragraph at lines 252--252
+[]     \OT1/cmtt/m/n/10 |      to adjust the member variable beta according to 
+the newT: beta = 1./newT[] 
+ []
+
+
+Overfull \hbox (40.49625pt too wide) in paragraph at lines 257--257
+[]     \OT1/cmtt/m/n/10 |      simplifies life by returning the correct index w
+ith regard to periodic[] 
+ []
+
+
+Overfull \hbox (45.7462pt too wide) in paragraph at lines 265--265
+[]     \OT1/cmtt/m/n/10 |      computes the Boltzmann weight factor needed in t
+he Metropolis Algorithm[] 
+ []
+
+) [27] (./Prakicumsbericht.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -577,11 +763,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3911 strings out of 494978
- 58759 string characters out of 6180203
- 120850 words of memory out of 5000000
- 7040 multiletter control sequences out of 15000+600000
- 13048 words of font info for 51 fonts, out of 8000000 for 9000
+ 3964 strings out of 494978
+ 59662 string characters out of 6180203
+ 121704 words of memory out of 5000000
+ 7081 multiletter control sequences out of 15000+600000
+ 13216 words of font info for 52 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  42i,16n,40p,1133b,337s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
@@ -595,11 +781,12 @@ ublic/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Prakicumsbericht.pdf (22 pages, 1436327 bytes).
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Prakicumsbericht.pdf (28 pages, 1150032 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
+ 216 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 156 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 161 words of extra memory for PDF output out of 10000 (max. 10000000)
 

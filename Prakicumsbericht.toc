@@ -6,4 +6,4 @@
 \contentsline {subsection}{\numberline {5.1}One dimension}{8}
 \contentsline {subsection}{\numberline {5.2}One dimension with external magnetic field}{12}
 \contentsline {subsection}{\numberline {5.3}Two dimensions}{14}
-\contentsline {section}{\numberline {6}Appendix}{14}
+\contentsline {section}{\numberline {6}Appendix}{18}
